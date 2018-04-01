@@ -273,10 +273,7 @@ updateInternal session msg model =
 
 scrollToTop : Task x ()
 scrollToTop =
-    Browser.setScrollTop bodyId
-        -- It's not worth showing the user anything special if scrolling fails.
-        -- If anything, we'd log this to an error recording service.
-        |> Task.onError (\_ -> Task.succeed ())
+    Debug.crash "blah"
 
 
 fetch : Maybe AuthToken -> Int -> FeedSource -> Task Http.Error ( Int, Feed )

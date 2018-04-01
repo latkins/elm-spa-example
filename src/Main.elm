@@ -175,15 +175,12 @@ viewPage session isLoading page =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.batch
-        [ pageSubscriptions (getPage model.pageState)
-        , Sub.map SetUser sessionChange
-        ]
+    Sub.none
 
 
 sessionChange : Sub (Maybe User)
 sessionChange =
-    Ports.onSessionChange (Decode.decodeValue User.decoder >> Result.toMaybe)
+    Sub.none
 
 
 getPage : PageState -> Page
@@ -305,8 +302,7 @@ setRoute maybeRoute model =
             in
             ( { model | session = { session | user = Nothing } }
             , Cmd.batch
-                [ Ports.storeSession Nothing
-                , Route.replaceUrl Route.Home
+                [ Route.replaceUrl Route.Home
                 ]
             )
 

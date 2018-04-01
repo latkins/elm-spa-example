@@ -12,10 +12,7 @@ import Request.Helpers exposing (apiUrl)
 
 storeSession : User -> Cmd msg
 storeSession user =
-    User.encode user
-        |> Encode.encode 0
-        |> Just
-        |> Ports.storeSession
+    Debug.crash "blah"
 
 
 login : { r | email : String, password : String } -> Http.Request User

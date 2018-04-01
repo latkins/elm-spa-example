@@ -217,9 +217,8 @@ viewComment user comment =
         ]
 
 
-formatCommentTimestamp : Time -> String
 formatCommentTimestamp =
-    Date.Format.format "%B %e, %Y"
+    Debug.crash "TODO"
 
 
 

@@ -57,4 +57,4 @@ view toggleFavorite article =
 
 formattedTimestamp : Article a -> String
 formattedTimestamp article =
-    Date.Format.format "%B %e, %Y" article.createdAt
+    "TODO"
